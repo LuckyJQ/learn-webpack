@@ -1,29 +1,33 @@
-const path = require('path');
+const path = require("path");
 
 module.exports = {
-    // 默认模式production
-    mode: 'development',
-    // 完整写法 对应chunk name
-    // entry: {
-    //     main: './src/index.js'
-    // }
-    entry: './src/index.js',
-    output: {
-        filename: 'bundle.js',
-        path: path.resolve(__dirname, 'dist')
-    },
+  // 默认模式production
+  mode: "development",
+  // 完整写法 对应chunk name
+  // entry: {
+  //     main: './src/index.js'
+  // }
+  entry: "./src/index.js",
+  output: {
+    filename: "bundle.js",
+    path: path.resolve(__dirname, "dist"),
+  },
 
-    // 使用loader
-    module: {
-        rules: [
+  // 使用loader
+  module: {
+    rules: [
+      {
+        test: /\.(png|jpe?g|gif)$/i,
+        use: [
           {
-            test: /\.(png|jpe?g|gif)$/i,
-            use: [
-              {
-                loader: 'file-loader',
-              },
-            ],
+            loader: "file-loader",
           },
         ],
       },
-}
+      {
+        test: /\.css$/,
+        use: ["style-loader", "css-loader"],
+      },
+    ],
+  },
+};
