@@ -23,7 +23,8 @@ module.exports = {
   devServer: {
     // 以什么目录作为读取目录
     contentBase: "./dist",
-    open: true
+    open: true,
+    hot: true,
   },
 
   // 使用loader
