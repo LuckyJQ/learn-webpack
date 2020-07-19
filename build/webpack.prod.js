@@ -1,5 +1,7 @@
-const commonConfig = require('./webpack.common.js')
+const commonConfig = require('./webpack.common')
 const { merge } = require('webpack-merge')
+
+console.log('commonConfig', commonConfig)
 
 const prodConfig = {
   mode: "production",
