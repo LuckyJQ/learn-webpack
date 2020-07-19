@@ -4,12 +4,12 @@ const { CleanWebpackPlugin } = require("clean-webpack-plugin");
 
 module.exports = {
   // 默认模式production
-  mode: "production",
+  mode: "development",
   // 完整写法 对应chunk name
   // entry: {
   //     main: './src/index.js'
   // }
-  entry: "./src/index.js",
+  entry: ["./src/index.js"],
   output: {
     filename: "bundle.js",
     path: path.resolve(__dirname, "dist"),
@@ -30,6 +30,7 @@ module.exports = {
   // 使用loader
   module: {
     rules: [
+      { test: /\.js$/, exclude: /node_modules/, loader: "babel-loader" },
       {
         test: /\.(png|jpe?g|gif)$/i,
         use: [

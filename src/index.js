@@ -2,6 +2,7 @@ import Header from './header';
 import Content from './content';
 import Footer from './footer';
 import './style.css';
+import '@babel/polyfill'
 
 import Avatar from './avatar.jpg';
 console.log(Avatar);
